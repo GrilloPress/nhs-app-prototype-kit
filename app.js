@@ -151,8 +151,14 @@ app.use(locals(config));
 app.set('view engine', 'html');
 documentationApp.set('view engine', 'html');
 
+var options = {
+  setHeaders: function (res, path, stat) {
+    res.set("Service-Worker-Allowed", "/")
+  }
+}
+
 // Middleware to serve static assets
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), options));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
 

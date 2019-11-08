@@ -1,0 +1,54 @@
+.app-list-cards {
+
+  a {
+
+    text-decoration: none;
+    color: $color_nhsuk-black;
+    display: block;
+
+    &:hover {
+
+      background-color: $nhsuk-focus-color;
+
+    }
+  }
+
+
+}
+
+.app-list-cards__item {
+
+  @include nhsuk-responsive-margin(5, 'bottom');
+
+}
+
+.app-list-cards__heading {
+
+  color: $color_nhsuk-blue;
+  @include nhsuk-responsive-margin(2, 'bottom');
+}
+
+.app-list-cards__heading--no-link {
+
+  color: $color_nhsuk-black;
+  @include nhsuk-responsive-margin(2, 'bottom');
+}
+
+.app-list--unstyled {
+
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+.nhsuk-summary-list__value {
+  @include mq($until: tablet) {
+    margin-bottom: nhsuk-spacing(2);
+  }
+}
+
+.nhsuk-summary-list__value--full-width {
+  @include mq($from: tablet) {
+    width: 70%;
+  }
+}

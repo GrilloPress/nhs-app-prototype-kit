@@ -1,0 +1,47 @@
+{% extends "template.html" %}
+{% if appHeading %}
+  {% set mainClasses = 'nhs-app-main' %}
+{% elif appLogin %}
+  {% set mainClasses = 'nhs-app-main nhs-app-main-login' %}
+{% else %}
+  {% set mainClasses = 'nhs-app-thin' %}
+{% endif %}
+{% set html_style = 'background-color: #f0f4f5;' %}
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsapp.css" rel="stylesheet">
+{% endblock %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  NHS App prototype kit
+{% endblock %}
+
+{% block header %}
+  <!-- Messages unread controller -->
+  {% set messagesReadUnread %}
+    {% if data['messageRead1'] !== 'read' %}
+      nhs-app-header__icon--unread
+    {% elif data['messageRead1'] !== 'read' %}
+      nhs-app-header__icon--unread
+    {% else %}
+      nhs-app-header__icon
+    {% endif %}
+  {% endset %}
+
+  {% include "includes/header.html" %}
+
+{% endblock %}
+
+{% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    <!-- Custom JavaScript files can be added to this file -->
+    {% include "includes/scripts.html" %}
+    <!-- For adding page specific JavsScript -->
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}

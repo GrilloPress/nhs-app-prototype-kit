@@ -1,0 +1,55 @@
+.login {
+
+  main.nhs-app-thin {
+
+    padding: 0 !important;
+  }
+}
+
+// utility classes
+
+.nhs-app-u-button-full {
+
+  @include mq($until: desktop) {
+    width: 100%;
+  }
+}
+
+a:visited {
+
+  color: $color_nhsuk-blue;
+}
+
+.nhs-app-heading--slim {
+
+  font-weight: 500;
+}
+
+.nhs-app-desktop--hide {
+
+  @include mq($from: desktop) {
+    display: none;
+  }
+
+}
+
+.nhs-app-desktop--show {
+
+  display: none;
+
+  @include mq($from: desktop) {
+    display: block;
+  }
+
+
+}
+
+.nhs-app-text-align--center {
+
+  text-align: center  !important;
+}
+
+.app-display--block {
+
+  display: block;
+}
