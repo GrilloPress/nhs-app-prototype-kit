@@ -1,5 +1,5 @@
 {% set PROTOTYPEURL = "examples" %}
-{% set serviceName = "Contact preferences" %}
+
 {% set contentTitle = "Examples" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
@@ -72,8 +72,16 @@
         </li>
       </ul>
 
+
+
       <h2>Elements</h2>
       <ul class="app-list--unstyled app-list-cards">
+        <li class="app-list-cards__item">
+          <a href="/{{ PROTOTYPEURL }}/elements/panel-link-with-chevron">
+            <h3 class="app-list-cards__heading nhsuk-heading-m">Panel link with chevron</h3>
+            <p>Let users select an item or page</p>
+          </a>
+        </li>
         <li class="app-list-cards__item">
           <a href="/{{ PROTOTYPEURL }}/elements/checkboxes">
             <h3 class="app-list-cards__heading nhsuk-heading-m">Checkboxes</h3>
