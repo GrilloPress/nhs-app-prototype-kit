@@ -1,21 +1,19 @@
-# NHS.UK prototype kit
+# NHS App prototype kit
 
-Visit the <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs">NHS.UK prototype kit site</a> to download the latest version and read the documentation.
-
-## About the NHS.UK prototype kit
-
-The NHS.UK prototype kit enables you to make interactive prototypes that will look like pages on NHS.UK. The prototypes you make are a great way to show ideas to others and for conducting user research.
-
-## Security
-
-If you publish your prototypes online, they must be protected by a <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs/how-tos/heroku">username and password</a>. This is to prevent members of the public finding prototypes and thinking they are real services.
-
-You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like NHS.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
+This is the NHS App version of the <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs">NHS.UK prototype kit </a>.
 
 ## Installation instructions
 
-- <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs/install/simple">Install guide (non technical)</a>
-- <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs/install/advanced">Developer friendly install guide (technical)</a>
+```
+git clone https://github.com/GrilloPress/nhs-app-prototype-kit.git
+cd nhs-app-prototype-kit
+npm install
+npm run watch
+```
+Then visit 
+
+Use `npm run watch` to start your server. It works on port `2000` without reloading and on port `3000` with live reloading.
+
 
 ## Contribute
 

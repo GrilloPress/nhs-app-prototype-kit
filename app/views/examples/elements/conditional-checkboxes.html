@@ -1,0 +1,92 @@
+{% set PROTOTYPEURL = "examples" %}
+{% set serviceName = "Contact preferences" %}
+{% set contentTitle = "Checkboxes" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% block pageScripts %}
+{% endblock %}
+
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+{% set var %}
+{{ textarea({
+  "name": "scr",
+  "id": "more-detail",
+  "label": {
+    "text": "Can you provide more detail?"
+  },
+  "hint": {
+    "text": "Don't include personal or financial information, eg your National Insurance number or credit card details."
+  }
+}) }}
+{% endset %}
+
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="#" method="get">
+        {{ checkboxes({
+          "idPrefix": "nationality",
+          "name": "nationality",
+          "fieldset": {
+            "legend": {
+              "text": contentTitle,
+              "classes": "nhsuk-fieldset__legend--xl",
+              "isPageHeading": true
+            }
+          },
+          "hint": {
+          "text": "Select all that apply"
+        },
+          "items": [
+            {
+              "value": "SCR",
+              "text": "Summary Care Record",
+              "conditional": {
+                html: var
+              }
+            },
+            {
+              "value": "PDS",
+              "text": "Patient Demographic Service",
+              "conditional": {
+                html: "<strong>hawisdijfnsenjj</strong>"
+              }
+            },
+            {
+              "value": "Data Release Register",
+              "text": "Data Release Register"
+            },
+            {
+              "value": "Research and planning",
+              "text": "Research and planning"
+            }
+          ]
+        }) }}
+
+        <input type="submit" class="nhsuk-button" value="Continue">
+        </input>
+
+      </form>
+      {{ backLink({
+        "href": "../index",
+        "text": "Back to list"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
