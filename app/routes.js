@@ -4,10 +4,12 @@ const router = express.Router();
 
 
 
+router.post('/settings/v1/logout', function (req, res) {
 
+  req.session.data = {}
+  res.redirect('/home/v1/')
 
-
-
+});
 
 var moment = require('moment');
 
