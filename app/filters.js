@@ -104,6 +104,11 @@ module.exports = function (env) {
 
   }
 
+  env.addFilter('hideEmpty', arr => arr.filter((val) => {
+    if (val.hideEmpty || !val) return false;
+    return true;
+  }));
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
